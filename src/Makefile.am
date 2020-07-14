@@ -1,0 +1,9 @@
+lib_LTLIBRARIES = libstats.la
+libstats_la_SOURCES = stats/stats.cpp
+libstats_la_CPPFLAGS = -I../include  -I./stats
+bin_PROGRAMS = test
+test_SOURCES = main.cpp
+test_LDADD = libstats.la
+test_CPPFLAGS = -I../include
+#libautotools_la_LIBADD = -l libraries
+AUTOMAKE_OPTIONS = subdir-objects
