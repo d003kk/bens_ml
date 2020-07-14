@@ -1,1 +1,1 @@
- autoreconf; automake; ./configure; make clean; make
+libtoolize; aclocal; autoreconf; automake --add-missing; ./configure; make clean; make
