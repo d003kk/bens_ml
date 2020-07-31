@@ -12,10 +12,17 @@
 
 #include <stats.h>
 #include<iostream>
+#include "fast-cpp-csv-parser/csv.h"
 using namespace std;
 
 int main(int args, char** argv)
 {
+	io::CSVReader<3, io::trim_chars<' '>, io::no_quote_escape<'\t'> > in("prostate.data");
+	  in.read_header(io::ignore_extra_column, "lcavol",  "lweight", "age");
+	  float lcavol,lweight,age;
+	  while(in.read_row(lcavol, lweight, age)){
+		  cout<<"lcavol: "<<lcavol<<endl;
+	  }
 	vector<float> data;
 	data.push_back(1.0);
 	data.push_back(1.0);

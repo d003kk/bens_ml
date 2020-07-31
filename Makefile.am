@@ -1,2 +1,2 @@
 SUBDIRS = include src
-AM_LDFLAGS = -shared -O3
+AM_LDFLAGS = -shared -O3 -lpthread
